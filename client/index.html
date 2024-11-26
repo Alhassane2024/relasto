@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/main.css" />
+
+    <link rel="icon" href="./images/favicon-relasto.svg" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+
+    <script src="./js/index.js" defer></script>
+    <script type="module" src="./js/categories.js" defer></script>
+    <script type="module" src="./js/properties.js" defer></script>
+    <script type="module" src="./js/propertyImages.js" defer></script>
+
+    <title>Relasto</title>
+  </head>
+  <body>
+    <!-- -------------------------
+        #HEADER SECTION  
+    ------------------------------->
+    <header class="header active" data-header>
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="./images/logo-relasto.svg" alt="logo Relasto" />
+        </a>
+
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li>
+              <a href="#" class="navbar-link link-style">Home</a>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link link-style">Listing</a>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </li>
+
+            <li>
+              <a href="#" class="navbar-link link-style">Agents</a>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </li>
+
+            <li class="link-style-with-icon">
+              <a href="#" class="navbar-link">Property</a>
+            </li>
+
+            <li class="link-style-with-icon">
+              <a href="#" class="navbar-link">Blog</a>
+            </li>
+          </ul>
+
+          <div class="navbar-wrapper">
+            <a href="#" class="btn-link label-medium">Login</a>
+
+            <a href="#" class="btn btn-fill-login label-medium">Sign up</a>
+          </div>
+        </nav>
+
+        <button
+          class="nav-toggle-btn icon-btn"
+          aria-label="toggle navbar"
+          data-nav-toggler
+        >
+          <ion-icon
+            name="menu-outline"
+            class="ionic-icon-menu open"
+            aria-hidden="true"
+          ></ion-icon>
+
+          <ion-icon
+            name="close-outline"
+            class="ionic-icon-menu close"
+            aria-hidden="true"
+          ></ion-icon>
+        </button>
+      </div>
+    </header>
+
+    <!-- -------------------------
+        #HERO SECTION  
+    ------------------------------->
+    <section class="hero-section">
+      <div class="container-120-left">
+        <div class="hero-section-container flex-row">
+          <div class="headline-and-form-container flex-column gap-40">
+            <div class="headline-container flex-column gap-16">
+              <h2 class="headline-xxl">
+                Find a perfect property Where you'll love to live
+              </h2>
+              <p style="font-size: 16px">
+                We helps businesses customize, automate and scale up their ad
+                production and delivery.
+              </p>
+            </div>
+
+            <form class="rent-buy-sell-form" id="searchForm" method="get">
+              <div class="form-container flex-column gap-16">
+                <div class="label-header-container flex-row jc-s-between gap-8">
+                  <span class="tab-button active" data-tab="buy"> Buy</span>
+                  <span class="tab-button" data-tab="sell"> Sell</span>
+                  <span class="tab-button" data-tab="rent"> Rent</span>
+                </div>
+
+                <div class="tab-content active flex-column gap-16" id="buy">
+                  <span class="input-container flex-row jc-s-between">
+                    <input
+                      type="text"
+                      name="rent"
+                      placeholder="Search for buy"
+                      class="search-item-field size-sm"
+                    />
+                    <ion-icon name="location-outline"></ion-icon>
+                  </span>
+
+                  <span class="input-container dropdown size-sm">
+                    <select
+                      name="options"
+                     
+                      class="select-property-type"
+                    >
+                      <option value="">Property Type</option>
+                      <option value="1">Option 1</option>
+                      <option value="2">Option 2</option>
+                      <option value="3">Option 3</option>
+                      <option value="4">Option 4</option>
+                    </select>
+                  </span>
+
+                  <span class="input-container flex-row jc-s-between">
+                    <input
+                      style="width: 100%"
+                      type="number"
+                      name="rent"
+                      placeholder="Price Range"
+                      class="search-item-field size-sm"
+                    />
+                  </span>
+                </div>
+
+                <div class="tab-content" id="sell">
+                  <input
+                    type="text"
+                    name="rent"
+                    placeholder="Search for sell"
+                    class="search-item-field body-one-rem"
+                  />
+
+                  <ion-icon
+                    class="icon-search"
+                    name="search-outline"
+                  ></ion-icon>
+                </div>
+
+                <div class="tab-content" id="rent">
+                  <input
+                    type="text"
+                    name="minPrice"
+                    placeholder="Search location"
+                    class="search-item-field body-one-rem"
+                  />
+
+                  <button
+                    type="submit"
+                    class="icon-search"
+                    name="search-outline"
+                    style="cursor: pointer"
+                  >
+                    Search
+                  </button>
+                </div>
+
+                <button class="btn btn-fill-login label-medium">Search</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="hero-image-container">
+            <img src="./images/img_hero.png" alt="hero image" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------
+        #FEATURES SECTION
+    ------------------------------->
+    <section class="features-section" style="display: none;">
+      <div class="features-container flex-row jc-s-between wrap gap-40">
+        <div class="left-container flex-column gap-40">
+          <div class="text-container flex-column gap-8">
+            <h3 class="headline-xl">
+              Simple & easy way to find your dream Appointment
+            </h3>
+            <p class="size-xs">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry.
+            </p>
+          </div>
+
+          <button class="btn btn-fill-login label-medium">Get Started</button>
+        </div>
+
+        <div class="right-container">
+          <div class="card">
+            <img src="./images/search-status.svg" alt="" />
+            <p class="four-features-text">Search your location</p>
+          </div>
+
+          <div class="card">
+            <img src="./images/eye.svg" alt="" />
+            <p class="four-features-text">Visit Appointment</p>
+          </div>
+
+          <div class="card">
+            <img src="./images/icon - wallet.svg" alt="" />
+            <p class="four-features-text">Get your dream house</p>
+          </div>
+
+          <div class="card">
+            <img src="./images/icon - happy.svg" alt="" />
+            <p class="four-features-text">Enjoy your Appointment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------
+        #STATS SECTION
+    ------------------------------->
+    <section class="stats-section">
+      <div class="flex-row jc-s-between wrap gap-40">
+        <div class="stats flex-column gap-16">
+          <div class="icon-stat-container">
+            <img src="./images/eye.svg" alt="" />
+          </div>
+
+          <div class="stats-text-container">
+            <h2 class="headline-xxl">$15.4M</h2>
+            <p class="four-features-text">Owned from properties transactions</p>
+          </div>
+        </div>
+
+        <hr class="hr-stats" />
+
+        <div class="stats flex-column gap-16">
+          <div class="icon-stat-container">
+            <img src="./images/eye.svg" alt="" />
+          </div>
+
+          <div class="stats-text-container">
+            <h2 class="headline-xxl">25K+</h2>
+            <p class="four-features-text">
+              Properties for Buy & sell Successfully
+            </p>
+          </div>
+        </div>
+
+        <hr class="hr-stats" />
+
+        <div class="stats flex-column gap-16">
+          <div class="icon-stat-container">
+            <img src="./images/eye.svg" alt="" />
+          </div>
+
+          <div class="stats-text-container">
+            <h2 class="headline-xxl">500</h2>
+            <p class="four-features-text">Daily completed transactions</p>
+          </div>
+        </div>
+
+        <hr class="hr-stats" />
+
+        <div class="stats flex-column gap-16">
+          <div class="icon-stat-container">
+            <img src="./images/eye.svg" alt="" />
+          </div>
+
+          <div class="stats-text-container">
+            <h2 class="headline-xxl">600+</h2>
+            <p class="four-features-text">Reagular Clients</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -------------------------
+    #LISTING PROPERTIES SECTION
+    ------------------------------->
+    <section class="listing-properties-section">
+
+      <div class="listing-properties-container">
+
+        <form class="rent-buy-sell-form" id="searchForm" method="get">
+
+          <div class="form-container flex-column gap-16">
+            
+            <div
+              class="label-header-container flex-row wrap jc-s-between gap-8"
+              id="tab-category-properties"
+            >
+              <span class="tab-button active title-medium" data-tab="buy"
+                >Resident Property</span
+              >
+              <span class="tab-button title-medium" data-tab="sell">
+                Commercial Property</span
+              >
+              <span class="tab-button title-medium" data-tab="rent">
+                Industrial Property</span
+              >
+              <span class="tab-button title-medium" data-tab="rent">
+                Agriculture Property</span
+              >
+            </div>
+
+            <!-- CONTENU MOBILE -->
+            <h3>Catégories de propriétés</h3>
+            <span class="input-container dropdown size-sm">
+              <select
+                name="options"
+                id="dropdown"
+                class="select-property-type"
+              >
+                <option value="">Select category</option>
+              </select>
+            </span>
+
+            <div class="property-list" id="buy">
+              <div class="property-card">
+                <img src="./images/img_hero.png" alt="Property 1" />
+
+                <div class="property-text-container flex-column gap-16">
+                  <div class="flex-row gap-8">
+                    <ion-icon
+                      class="icon-ameneties"
+                      name="location-outline"
+                    ></ion-icon>
+                    <p class="size-xs">2861 62nd Ave, Oakland</p>
+                  </div>
+
+                  <div class="flex-column gap-8">
+                    <div class="flex-row jc-s-between">
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="bed-outline"
+                        ></ion-icon>
+                        <p class="size-xs">3 Bed Room</p>
+                      </div>
+
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="color-fill-outline"
+                        ></ion-icon>
+                        <p class="size-xs">1 Bath</p>
+                      </div>
+                    </div>
+
+                    <div class="flex-row jc-s-between">
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="expand-outline"
+                        ></ion-icon>
+                        <p class="size-xs">1,032 sqft</p>
+                      </div>
+
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="wifi-outline"
+                        ></ion-icon>
+                        <p class="size-xs">Family</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-row jc-s-between">
+                    <a
+                      href="#"
+                      class="btn btn-fill-login view-details-button"
+                      style="flex: 1; font-weight: 600"
+                      >Details</a
+                    >
+                    <p class="size-xs" style="flex: 1">$649,900</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="property-card">
+                <img src="./images/img_hero.png" alt="Property 1" />
+
+                <div class="property-text-container flex-column gap-16">
+                  <div class="flex-row gap-8">
+                    <ion-icon
+                      class="icon-ameneties"
+                      name="location-outline"
+                    ></ion-icon>
+                    <p class="size-xs">2861 62nd Ave, Oakland</p>
+                  </div>
+
+                  <div class="flex-column gap-8">
+                    <div class="flex-row jc-s-between">
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="bed-outline"
+                        ></ion-icon>
+                        <p class="size-xs">3 Bed Room</p>
+                      </div>
+
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="color-fill-outline"
+                        ></ion-icon>
+                        <p class="size-xs">1 Bath</p>
+                      </div>
+                    </div>
+
+                    <div class="flex-row jc-s-between">
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="expand-outline"
+                        ></ion-icon>
+                        <p class="size-xs">1,032 sqft</p>
+                      </div>
+
+                      <div class="flex-row gap-8">
+                        <ion-icon
+                          class="icon-ameneties"
+                          name="wifi-outline"
+                        ></ion-icon>
+                        <p class="size-xs">Family</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex-row">
+                    <a
+                      href="#"
+                      class="btn btn-fill-login view-details-button"
+                      style="flex: 1; font-weight: 600"
+                      >Details</a
+                    >
+                    <p class="size-xs" style="flex: 1">$649,900</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- FIN CONTENU MOBILE -->
+
+            <div class="tab-content" id="sell">
+              <input
+                type="text"
+                name="rent"
+                placeholder="Search for sell"
+                class="search-item-field body-one-rem"
+              />
+
+              <ion-icon class="icon-search" name="search-outline"></ion-icon>
+            </div>
+
+            <div class="tab-content" id="rent">
+              <input
+                type="text"
+                name="minPrice"
+                placeholder="Search location"
+                class="search-item-field body-one-rem"
+              />
+
+              <button
+                type="submit"
+                class="icon-search"
+                name="search-outline"
+                style="cursor: pointer"
+              >
+                Search
+              </button>
+            </div>
+
+            <div class="tab-content" id="agriculture-property">
+              <input
+                type="text"
+                name="minPrice"
+                placeholder="Search location"
+                class="search-item-field body-one-rem"
+              />
+
+              <button
+                type="submit"
+                class="icon-search"
+                name="search-outline"
+                style="cursor: pointer"
+              >
+                Search
+              </button>
+            </div>
+
+            <div class="tab-controlls-mobile flex-row jcc gap-24">
+                <ion-icon class="icon-controls left" name="chevron-back-outline" style="cursor: pointer;"></ion-icon>
+                <ion-icon class="icon-controls rigth" name="chevron-forward-outline" style="cursor: pointer;"></ion-icon>
+            </div>
+
+            <button class="btn btn-fill-login label-medium">Search</button>
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+
+    <!-- -------------------------
+        #TWO BLOCKS SECTION
+    ------------------------------->
+    <section class="two-blocks flex-column gap-40">
+
+        <div class="two-blocks-container flex-column gap-24">
+
+          <div class="two-blocks-text-btn-container">
+
+            <div class="two-blocks-text-container flex-column gap-16">
+              <h3 class="headline-xl">Simple & easy way to find your dream Appointment</h3>
+              <p class="size-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. In a free hour, when our power of choice is untrammelled and when nothing prevents our being able to do what we like best, every pleasure is to be welcomed.</p>
+            </div>
+            <a href="#" class="btn btn-fill-login label-medium" style="display: none;">Get Started</a>
+          </div>
+
+          <div class="images-container" style="display: none;">
+            <img src="./images/img_image_7.png" alt="">
+            <img src="./images/img_image_7.png" alt="">
+            <img src="./images/img_image_7.png" alt="">
+            <img src="./images/img_image_7.png" alt="">
+          </div>
+          
+          <div class="img-container flex-column gap-24">
+            <img src="./images/img_rectangle_18.png" alt="">
+            <a href="#" class="btn btn-fill-login label-medium" style="text-align: center;">Get sarted</a>
+          </div>
+        </div>
+
+
+        <div class="two-blocks-container flex-column gap-24" style="align-items: flex-start;">
+
+          <div class="two-blocks-text-btn-container flex-column gap-24">
+
+            <div class="two-blocks-text-container flex-column gap-16">
+              <h3 class="headline-xl">Best rated host on popular rental sites</h3>
+              <p class="size-xs">Lorem Ipsum is simply dummy text of the printing and typesetting industry. In a free hour, when our power of choice is untrammelled.</p>
+            </div>
+
+            <div class="avantages-conainer flex-column gap-8">
+
+              <div class="icon-text-avantages flex-row gap-8">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <span class="size-sm">Find excellent deals</span>
+              </div>
+
+              <div class="icon-text-avantages flex-row gap-8">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <span class="size-sm">Friendly host & Fast support</span>
+              </div>
+
+              <div class="icon-text-avantages flex-row gap-8">
+                <ion-icon name="checkmark-circle-outline"></ion-icon>
+                <span class="size-sm">Secure payment system</span>
+              </div>
+            </div>
+
+            <a href="#" class="btn btn-fill-login label-medium" style="text-align: center;">Learn more</a>
+          </div>
+          
+          <div class="img-container flex-column gap-24" style="display: none;">
+            <img src="./images/img_rectangle_18.png" alt="">
+            <a href="#" class="btn btn-fill-login label-medium">Learn more</a>
+          </div>
+        </div>
+    </section>
+
+
+    <!-- -------------------------
+        #CTA SECTION
+    ------------------------------->
+    <section class="cta">
+
+      <div class="cta-container">
+
+          <div class="text-cta-header-container">
+
+              <h3 style="color: #FD650B;">For Recent Update, News.</h3>
+              <p class="size-sm" style="text-align: center;">We helps businesses customize, automate and scale up their ad production and delivery.</p>
+          </div>
+          <div class="input-and-submit-button-container">
+
+              <input type="text" name="rent" placeholder="Enter your email address" class="cta-input search-item-field body-one-rem">
+              <a href="#" class="btn btn-fill-login label-medium" style="text-align: center;">Submit</a>
+              <p class="benefit-subtitle property-listings-subtitle body-one-rem">Join <span style="color: #FD650B; text-align: center;">10,000+</span> other landlords in our estatery community.</p>
+          </div>
+      </div>
+  </section>
+
+
+   <!-- -------------------------
+        #FOOTER SECTION  
+    ------------------------------->
+    <section class="footer">
+
+      <div class="footer-container">
+
+          <img src="./images/logo-relasto.svg" alt="logo-estatery">
+
+          <div class="footer-link-container">
+
+              <div class="left link-container">
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">SELL A HOME</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Request an offer</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Pricing</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Reviews</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Stories</a>
+                      </li>
+                  </ul>
+                  </div>
+
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">BUY A HOME</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Buy</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Finance</a>
+                      </li>
+                  </ul>
+                  </div>
+
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">BUY, RENT AND SELL</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Buy & sell properties</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Rent home</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Builder trade-up</a>
+                      </li>
+                  </ul>
+                  </div>
+              </div>
+
+              <div class="rigth link-container">
+
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">TERMS & PRIVACY</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Trust & Safety</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Terms of Service</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Privacy Policy</a>
+                      </li>
+                  </ul>
+                  </div>
+
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">ABOUT</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Company</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">How it works</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Contact</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Investors</a>
+                      </li>
+                  </ul>
+                  </div>
+
+                  <div class="link-wrapper">
+                      <p class="link-title body-one-rem">RESOURCES</p>
+                  <ul class="link-ul">
+                      <li>
+                          <a class="footer-link" href="#">Blog</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Guides</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">FAQ</a>
+                      </li>
+
+                      <li>
+                          <a class="footer-link" href="#">Help Center</a>
+                      </li>
+                  </ul>
+                  </div>
+                  
+              </div>
+          </div>
+
+          <hr style="border-color: #fd640b29;">
+
+          <div class="copyrigth-container">
+
+              <p class="body-one-rem">©2024 Relasto. All rights reserved</p>
+              <div class="social-media-container">
+                  <ul class="social-media-ul">
+                      <li>
+                          <img class="social-icon" src="./assets/facebook-f 1.svg" alt="">
+                      </li>
+
+                      <li>
+                          <img class="social-icon" src="./assets/instagram 1.svg" alt="">
+                      </li>
+
+                      <li>
+                          <img class="social-icon" src="./assets/linkedin 1.svg" alt="">
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </section>
+  </body>
+</html>

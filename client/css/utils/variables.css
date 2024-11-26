@@ -1,0 +1,70 @@
+:root {
+    /* Font Sizes */
+    --font-size-xxl: 2.2rem;    /* Très grand titre */
+    --font-size-xl: 1.3rem;   /* Grand titre */
+    --font-size-lg: 2rem;     /* Titre principal */
+    --font-size-md: 1.5rem;   /* Sous-titre */
+    --font-size-sm: 1.125rem; /* Texte standard */
+    --font-size-xs: 1rem;     /* Petit texte */
+    --font-size-xxs: 0.875rem; /* Texte très petit */
+
+        /* TYPOGRAPHIE  */
+    --font-primary: "Manrope", sans-serif;
+
+    /* FONT WEIGTH  */
+    --fw-xxl: 800;
+    --fw-xl: 700;
+    --fw-xl: 500;
+    --fw-regular: 400;
+
+        /* LINE HEIGTH  */
+    --lh-headline-xxl: 120%;
+    --lh-hedaline-medium: 125%;
+    --lh-hedaline-small: 160%;
+
+    /* LETTER SPACING  */
+    --ls-xxl: 1%;
+    --ls-zero-dot-five: 0.5%;
+
+    /* BORDER RADIUS  */
+    --radius-8: 8px;
+
+        /* GRADIENT  */
+    --gradient: linear-gradient(to top, #fff7f129 0%, #FFF7F1 100%);
+    --gradient-right: linear-gradient(to top, #e0def700 0%, #E0DEF7 100%);
+
+    /* SHADOW  */
+    --shadow-1: 0px 2px 40px 0px #00000033;
+    --shadow-2: 0px 2px 30px 0px #7570ff32;
+
+    /* TRANSITION  */
+    --transition-easing-quick: cubic-bezier(0, 0.7, 0.3, 1);
+    --transition-duration-quick: 200ms;
+    --transition-duration-smooth: 500ms;
+
+
+    /* Primary Colors */
+  --color-primary: #FFF9F6;      /* Bleu principal */
+  --color-primary-black: #1A1A1A; /* Bleu clair */
+  --color-primary-gray: #636363;  /* Bleu foncé */
+
+  /* Secondary Colors */
+  --color-secondary-pink: #FFE0CF;      /* Violet principal */
+  --color-secondary-pink-medium: #FFF7F1; /* Violet clair */
+  --color-secondary-pink-light: #FCEEE6; /* Violet clair */
+  --color-secondary-orange: #FD650B;  /* Violet foncé */
+
+  /* Neutral Colors */
+  --color-white: #ffffff;         /* Blanc pur */
+  --color-black: #000000;         /* Noir pur */
+  --color-gray-light: #6E6E6E;    /* Gris clair */
+  --color-gray: #6b7280;          /* Gris standard */
+  --color-gray-dark: #374151;     /* Gris foncé */
+
+  /* Alert/Status Colors */
+  --color-success: #22c55e;       /* Vert succès */
+  --color-warning: #fbbf24;       /* Jaune alerte */
+  --color-error: #ef4444;         /* Rouge erreur */
+  --color-info: #0ea5e9;          /* Bleu information */
+  }
+  

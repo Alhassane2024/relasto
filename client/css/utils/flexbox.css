@@ -1,0 +1,47 @@
+
+
+.flex-row {
+    display: flex;
+    align-items: center;
+}
+
+.wrap {
+    flex-wrap: wrap;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.jcc {
+    justify-content: center;
+}
+
+.jc-s-between {
+    justify-content: space-between;
+}
+
+.jc-s-around {
+    justify-content: space-around;
+}
+
+.aic {
+    align-items: center;
+}
+
+.gap-40 {
+    gap: 40px;
+}
+
+.gap-24 {
+    gap: 24px;
+}
+
+.gap-16 {
+    gap: 16px;
+}
+
+.gap-8 {
+    gap: 8px;
+}
